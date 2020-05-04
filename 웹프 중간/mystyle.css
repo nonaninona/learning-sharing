@@ -1,0 +1,145 @@
+/*201911247남권표*/
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: serif;
+}
+/*모든 태그에 대해 여백을 0으로 초기화, 글씨체 serif*/
+ul{
+	list-style: none;
+}
+/*목록화시 디스크 모양의 머리글 해제*/
+a{
+	text-decoration: none;
+}
+img{
+	border: 0px;
+}
+#title{
+	font-family: 'Indie Flower', cursive;
+}
+body{
+	width: 960px;
+	margin: 0px auto;
+}
+#left{
+	width: 200px;
+	height: 800px;
+	background-color: green;
+}
+#quick-menu{
+	width: 100px;
+	height: 100px;
+	padding: 20px;/*상하 좌우 20픽셀 여백*/
+	margin-left: 30px;/*블록 왼쪽 바깥 여백 30*/
+	background-color: white;
+	opacity: 0.2;
+	border-radius: 15px;
+	position: fixed;
+	top: 40%;
+}
+.right{
+	width: 760px;
+	float: right;
+}
+header{
+	width: 760px;
+	height: 150px;
+	background-color: #C9C9C9;
+	position: relative;
+}
+#title{
+	width: 300px;
+	height: 100px;
+	position: absolute;
+	top: 25px;
+	right: 100px;
+	font-size: 25px;
+	line-height: 100px;
+	text-align: center;
+}
+nav{
+	width: 760px;
+	height: 50px;
+	background-color: orange;
+	overflow: hidden;
+}
+#content{
+	width: 660px;
+	height: 500px;
+	background-color: yellow;
+	padding: 50px;
+}
+footer{
+	width: 960px;
+	height: 100px;
+	background-color: blue;
+	color: white;
+	line-height: 100px;
+	text-align: center;
+}
+.menu-item{
+	display: block;
+	width: 100px;
+	height: 50px;
+	margin: 0 70px;
+	text-align: center;
+	line-height: 50px;
+	float: left;
+}
+article{
+	width: 510px;
+	height: 350px;
+	padding: 50px;
+	border: 1px solid black;
+	border-radius: 15px;
+	margin: auto;
+}
+input:nth-of-type(1){display: none;}
+input:nth-of-type(2){display: none;}
+input:nth-of-type(3){display: none;}
+input:nth-of-type(1)~#content > article:nth-of-type(1){
+	display: none;
+}
+
+input:nth-of-type(1):checked~#content > article:nth-of-type(1){
+	display: block;
+}
+input:nth-of-type(2)~#content > article:nth-of-type(2){
+	display: none;
+}
+
+input:nth-of-type(2):checked~#content > article:nth-of-type(2){
+	display: block;
+}
+input:nth-of-type(3)~#content > article:nth-of-type(3){
+	display: none;
+}
+
+input:nth-of-type(3):checked~#content > article:nth-of-type(3){
+	display: block;
+}
+input:nth-of-type(1):checked~nav > ul > li:nth-of-type(1){
+	background-color: blue;
+	color: white;
+}
+input:nth-of-type(2):checked~nav > ul > li:nth-of-type(2){
+	background-color: blue;
+	color: white;
+}
+input:nth-of-type(3):checked~nav > ul > li:nth-of-type(3){
+	background-color: blue;
+	color: white;
+}
+.qmenu-item{
+	display: block; 
+	width: 100px;
+	height: 30px;
+	text-align: center; 
+	line-height: 30px
+}
+img{
+	width: 250px;
+	height: 321px;
+	float: left;
+}

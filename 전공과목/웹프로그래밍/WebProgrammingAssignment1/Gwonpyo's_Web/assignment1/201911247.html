@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gwonpyo's Web Page!</title>
+	<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		li{list-style: none;}
+		a{text-decoration: none;}
+		body{
+			width: 960px;
+			margin: 0px auto;
+		}
+		header{
+			height: 100px;
+			background-color: #003458;
+			overflow: hidden;
+			position: fixed;
+			top: 0px;
+		}
+		nav{
+			position: fixed;
+			top: 100px;
+			background-color: white;
+			border-left: 1px solid #C9C9C9;
+			border-right: 1px solid #C9C9C9;
+		}
+		input[type=text]:focus{
+			background-color: #00806a;
+			outline: 0;
+		}
+		input[type=submit]:focus{
+			outline: 0;
+		}
+		#master-title{
+			color: white;
+			width: 480px;
+			font-family: 'Courgette', cursive;
+			line-height: 100px;
+			margin: 0px 100px;
+			float:left;
+		}
+		#my-information{
+			width: 280px;
+			height: 48px;
+			margin: 25px 0px;
+			padding: 1px 0px;
+			float: right;
+		}
+		#my-information > div{
+			overflow: hidden
+		}
+		#my-information > div > img{
+			display: block;
+			float: left;
+		}
+		#my-information > div > p{
+			display: block;
+			float: left;
+		}
+		#main-navigation{
+			height: 40px;
+			border-bottom: 1px solid #C9C9C9;
+			overflow: hidden;
+		}
+		#move-to-article{
+			width: 620px;
+			margin-left: 50px;
+			float: left;
+		}
+		.move-to-article-item{
+			color: black;
+			font-size: 20px;
+			display: block;
+			height: 30px;
+			width: 80px;
+			padding: 5px 20px;
+			text-align: center;
+			line-height: 30px;
+			float: left;
+		}
+		.move-to-article-item:hover{
+			color: #00806a;
+		}
+		#search-box{
+			height: 26px;
+			padding: 7px;
+			float: left;
+		}
+		#search-box-text{
+			display: block;
+			height: 24px;
+			width: 177px;
+			padding-left: 10px;
+			border: 1px solid #CCCCCC;
+			border-radius: 15px 0px 0px 15px;
+			float: left;
+		}
+		#search-box-submit{
+			display: block;
+			height: 26px;
+			width: 50px;
+			border: 1px solid #CCCCCC;
+			border-radius: 0px 15px 15px 0px;
+			float: right;
+			margin-right: 35px;
+			background-image: url('search_img.jpeg');
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		#content{
+			margin-top: 141px;
+			overflow: hidden;
+		}
+		#main-section1{
+			width: 669px;
+			height: 298px;
+			float: left;
+			border-bottom: 1px solid #C9C9C9;
+		}
+		#main-section2{
+			width: 960px;
+			float: left;
+		}
+		#main-section1{
+			border-left: 1px solid #C9C9C9;
+		}
+		#main-section2 > article{
+			border-bottom: 1px solid #C9C9C9;
+			border-left: 1px solid #C9C9C9;
+			border-right: 1px solid #C9C9C9;
+		}
+		#main-section1 > article > .article-header{
+			padding-top: 10px;
+			padding-left: 24px;
+			padding-bottom: 10px;
+		}
+		#main-section2 > article > .article-header{
+			padding-top: 10px;
+			padding-left: 24px;
+			padding-right: 24px;
+			padding-bottom: 10px;
+		}
+		.article-header{
+			border-bottom: 1px solid #C9C9C9;
+		}
+		.article-header > label > h1{
+			font-family: 'Song Myung', serif;
+		}
+		.article-header > label > h1:hover{
+			color: #00806a;
+		}
+		#main-section1 > article > .article-body{
+			overflow: hidden;
+			padding-top: 2px;
+			padding-left: 24px;
+			padding-bottom: 21px;
+		}		
+		#article2 > .article-body{
+			overflow: hidden;
+			padding-top: 20px;
+			padding-left: 24px;
+			padding-bottom: 22px;
+			padding-right: 24px;
+			background-color: #003458;
+			font-family: 'Cute Font', cursive;
+			font-size: 21px;
+		}
+		.Question{	
+			overflow: hidden;
+			background-color: #66CDAA;
+		}
+		.ask {
+			width: 700px;
+			float: left;
+		}
+		.answer{
+			width: 700px;
+			float: right;
+		}
+		.ask > img{
+			display: inline-block;
+			margin: 24.5px 9.5px;
+			float: left;
+		}
+		.ask > div{
+			width: 647px;
+			float: left;
+		}
+		.ask > div > p{
+			display: inline-block;
+			margin: 20px 5px;
+			padding: 5px;
+			border: 1px solid #000000;
+			border-radius: 15px 15px 15px 15px;
+			float: left;
+			background-color: #48D1CC;
+		}
+		.answer > img{
+			display: inline-block;		
+			margin: 24.5px 9.5px;	
+			float: right;
+		}
+		.answer > div{
+			width: 647px;
+			float: right;
+		}
+		.answer > div > p{
+			display: inline-block;
+			margin: 20px 5px;
+			padding: 5px;
+			border: 1px solid #000000;
+			border-radius: 15px 15px 15px 15px;
+			float: right;
+			background-color: yellow;
+		}
+		#my_picture{
+			width: 190px;
+			height: 228px;
+			float: left;
+		}
+		#introduce{
+			display: block;
+			width: 420px;
+			height: 168px;
+			margin: 13px 13.5px;
+			padding: 17px 3px;
+			border: 1px solid #000000;
+			border-radius: 15px 15px 15px 15px;
+			float: left;
+		}
+		aside{
+			float: right;
+			width: 289px;
+			height: 298px;
+			overflow-y: scroll;
+			border-bottom: 1px solid #C9C9C9;
+			border-right: 1px solid #C9C9C9;
+		}
+		article > input:nth-of-type(1){display: none;}
+		article > input:nth-of-type(1) ~ div:nth-of-type(2){display: none;}
+		article > input:nth-of-type(1):checked ~ div:nth-of-type(2){display: block;}
+		aside > input:nth-of-type(1){display: none;}
+		aside > input:nth-of-type(1) ~ div:nth-of-type(1){display: none;}
+		aside > input:nth-of-type(1):checked ~ div:nth-of-type(1){display: block;}
+		aside > input:nth-of-type(2){display: none;}
+		aside > input:nth-of-type(2) ~ div:nth-of-type(2){display: none;}
+		aside > input:nth-of-type(2):checked ~ div:nth-of-type(2){display: block;}
+		section.tab-title{overflow: hidden;}
+		section.tab-title>label{
+			display: block;
+			float: left;
+			width: 133px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border: 1px solid #C9C9C9;
+			border-top: none;
+			border-bottom: none;
+		}
+		aside > input:nth-of-type(1):checked ~ section.tab-title > label:nth-of-type(1){
+			background-color: #003458;
+			color: white;
+		}
+		aside > input:nth-of-type(2):checked ~ section.tab-title > label:nth-of-type(2){
+			background-color: #003458;
+			color: white;	
+		}
+		.item{
+			overflow: hidden;
+			width: 248px;
+			padding: 10px;
+			border: 1px solid #C9C9C9;
+			border-bottom: none;
+		}
+		.thumbnail{
+			width: 45px;
+			height: 45px;
+			padding: 2px 0px;
+			float: left;
+		}
+
+		.description{
+			float: left;
+			margin-left: 10px;
+			height: 49px;
+			line-height: 49px;
+			color: #000000;
+		}
+		.description:hover{color: #00806a}
+		.description > strong{
+			display: block;
+			width: 193px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		#article3 > .article-body{
+			overflow: hidden;
+			padding-top: 20px;
+			padding-left: 24px;
+			padding-bottom: 22px;
+			padding-right: 24px;
+		}
+		#article3 > .article-body > img{
+			float: left;
+		}
+		#simple-book-introduce{
+			width: 433px;
+			height: 671px;
+			margin: 0px 9px;
+			float: left;
+			border: 1px solid #000000;
+			border-radius: 15px 15px 15px 15px;
+			background-color: #003458;
+		}
+		#simple-book-introduce > p{
+			display: block;
+			width: 403px;
+			margin: 10px;
+			padding: 0px 5px;
+			float: left;
+		}
+		#wrapper {
+			border: 0px;
+			height: 551px;
+			background-color: #50bcdf;
+			border-radius: 15px 15px 15px 15px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			margin-bottom: 18px;
+			margin-right: 10px;
+			margin-left: 10px; 
+			float: left;
+		}
+		#wrapper > p{
+			display: block;
+			width: 403px;
+			padding: 0px 5px;
+			float: left;
+		}
+		#wrapper > p:nth-of-type(1){
+			margin-top: 55px;
+		}
+		#wrapper > p:nth-of-type(4){
+			margin-bottom: 55px;
+		}
+		#article4 > .article-body{
+			margin: 20px 22px 24px 24px;
+			border: 1px solid #C9C9C9;
+			border-radius: 15px 15px 15px 15px;
+		}
+		#article4 > .article-body > p{
+			display: block;
+			padding: 5px;
+			overflow: hidden;
+		}
+		#article4 > .article-body > p > img{
+			border-radius: 15px 15px 15px 15px;
+			width: 399px;
+			height: 498.6px;
+			float: right;
+		}
+		footer{
+			background-color: #003458;
+			font-family: 'Courgette', cursive;
+			font-weight: bold;
+		}
+		#last-comment{
+			background-color: #50bcdf;
+			height: 60px;
+			padding: 30px 0px;
+		}
+		#last-comment > h2{
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+		footer > p{
+			display: block;
+			color: white;
+			padding-left: 30px;
+			height: 40px;
+			line-height: 40px;
+		}
+		.for-fake{
+			width: 960px;
+			height: 0px;
+			position: relative;
+		}
+		.article-fake{
+			width: 0px;
+			height: 141px;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div id="master-title">
+			<h1>Welcome to My Web Page!</h1>
+		</div>
+		<div id="my-information">
+			<div>
+				<img src="call_img.jpeg" alt="My phone number">
+				<p>&nbsp; 01031399441</p>
+			</div>
+			<div>
+				<img src="mail_img.jpeg" alt="My email address">
+				<p>&nbsp; ngp9440@gmail.com</p>
+			</div>
+		</div>
+	</header>
+	<nav id=main-navigation>
+		<div id="move-to-article">
+			<a href="#article1-fake" class="move-to-article-item">article1</a>
+			<a href="#article2-fake" class="move-to-article-item">article2</a>
+			<a href="#article3-fake" class="move-to-article-item">article3</a>
+			<a href="#article4-fake" class="move-to-article-item">article4</a>
+		</div>
+		<div id="search-box">
+			<form method="post">
+				<input type="text" name="search-text" id="search-box-text">
+				<input type="submit" name="search-submit" id="search-box-submit" value="">
+			</form>
+		</div>
+	</nav>
+	<div id='content'>
+		<section id="main-section1">
+			<div class="for-fake">
+				<div id=article1-fake class="article-fake"></div>
+			</div>
+			<article id="article1">
+				<input type="radio" name="article_1" id="open_article1">
+				<div class="article-header">
+					<div id=article1_fake class="article_fake"></div>
+					<label for="open_article1">
+						<h1>1. 나는 누굴까?</h1>
+					</label>
+				</div>
+				<div class="article-body">
+					<img src="my_picture.jpeg" alt="my_picture" id="my_picture">
+					<div id="introduce">
+					 안녕하세요! 저는 건국대에 재학중인 남권표입니다!
+					저는 은평구에 살고있고 학창시절동안 이 동네를 벗어나본 적이 없어요.
+					그래서인지 건국대에 처음 입학했을 때는 조금 어색하더라구요 ㅎㅎ.
+					하지만 점점 익숙해지면서 친구들도 사귀고, 동아리도 들면서 나만의 취미 생활도
+					만들게 됐어요. 취미 생활은 베드민턴, 음악 듣기이고, 팝송을 좋아해요.
+					그중에서도 Justin Bieber의 노래를 많이 듣는 편이에요. 좋은 팝송을 추천해 주는건 언제든 환영입니다!
+					</div>
+				</div>
+			</article>
+		</section>
+		<aside id="main-aside">
+			<input type="radio" name="tab" id="go_article">
+			<input type="radio" name="tab" id="open_article" checked="checked">
+			<section class="tab-title">
+				<label for="go_article">Go to Articles</label>
+				<label for="open_article">Open Articles</label>
+			</section>
+			<div class="tab-item">
+				<ul>
+					<li class="item">
+						<a href="#article1-fake">
+							<div class="thumbnail">
+								<img src="number1_img.jpeg" width="45" height="45" alt="number1_img">
+							</div> 
+							<div class="description">
+								<strong>1. 나는 누굴까?</strong>
+							</div>
+						</a>
+					</li>
+					<li class="item">
+						<a href="#article2-fake">
+							<div class="thumbnail">
+								<img src="number2_img.jpeg" width="45" height="45" alt="number2_img">
+							</div>
+							<div class="description">
+								<strong>2. 내 안의 나를 찾아보자!</strong>
+							</div>		
+						</a>
+					</li>
+					<li class="item">
+						<a href="#article3-fake">
+							<div class="thumbnail">
+								<img src="number3_img.jpeg" width="45" height="45" alt="number3_img">
+							</div>
+							<div class="description">
+									<strong>3. 나의 소중한 기억!</strong>
+							</div>		
+						</a>
+					</li>
+					<li class="item">
+						<a href="#article4-fake">
+							<div class="thumbnail">
+								<img src="number4_img.jpeg" width="45" height="45" alt="number4_img">
+							</div>
+							<div class="description">
+								<strong>4. 소개합니다!</strong>
+							</div>		
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-item">
+				<ul>
+					<li class="item">
+						<label for="open_article1">
+							<div class="thumbnail">
+								<img src="number1_img.jpeg" width="45" height="45" alt="number1_img">
+							</div>
+							<div class="description">
+								<strong>1. 나는 누굴까?</strong>
+							</div>		
+						</a>
+					</li>
+					<li class="item">
+						<label for="open_article2">
+							<div class="thumbnail">
+								<img src="number2_img.jpeg" width="45" height="45" alt="number2_img">
+							</div>
+							<div class="description">
+								<strong>2. 내 안의 나를 찾아보자!</strong>
+							</div>		
+						</a>
+					</li>
+					<li class="item">
+						<label for="open_article3">
+							<div class="thumbnail">
+								<img src="number3_img.jpeg" width="45" height="45" alt="number3_img">
+							</div>
+							<div class="description">
+								<strong>3. 나의 소중한 기억!</strong>
+							</div>		
+						</a>
+					</li>
+					<li class="item">
+						<label for="open_article4">
+							<div class="thumbnail">
+								<img src="number4_img.jpeg" width="45" height="45" alt="number4_img">
+							</div>
+							<div class="description">
+								<strong>4. 소개합니다!</strong>
+							</div>		
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<section id="main-section2">
+			<div class="for-fake">
+				<div id=article2-fake class="article-fake"></div>
+			</div>
+			<article id="article2">
+				<input type="radio" name="article_2" id="open_article2">
+				<div class="article-header">
+					<label for="open_article2">
+						<h1>2. 내 안의 나를 찾아보자!</h1>
+					</label>
+				</div>
+				<div class="article-body">
+					<div id="Question1" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									1. 너는 뭘 좋아해?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									나는 노래! 노래를 들으면 마음이 편해지고 부를 때는 그만큼 스트레스를 풀어주는 것도 없거든.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question2" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									2. 그러면 앞으로의 진로는 음악과 관련이 있어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									아니! 음악이 좋긴 하지만 그만한 재능이 있는 것 같지는 않아. 근데 고등학교 때부터 알파고, 스마트폰 등을 보면서 기계들이 어떻게 작동되는지 관심이 생겼고, 자연스럽게 컴퓨터에 관심이 갔지. 그래서 진로는 음악보다는 컴퓨터와 관련이 있을 것 같아! 
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question3" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									3. 컴퓨터 관련 학과는 과제가 많다고 들었는데 힘들지는 않아?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									아직 내가 많이 부족해서 힘든 부분이 많긴 해. 그래서 밤도 많이 새고 있지. 하지만 고생 끝에 결과물을 완성했을 때의 기분은 말로 표현할 수 없어. 그 기쁨과 성취감들이 지금의 힘든 일들을 버틸 수 있게 해주는 것 같아.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question4" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									4. 현재 어떤 부분에서 너가 많이 부족함을 느껴?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									평소 웹프로그래밍, 객체지향프로그래밍 등 여러 강의의 실습들을 수행하면서 이렇게 하는 게 맞나? 하는 불안감이 들 때가 있어. 이런 불안감이 내 부족한 실력에서 비롯된다고 생각해. 
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question5" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									5. 그럼 그런 부족함을 보완하기 위해 하고있는게 있어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									부족한 부분들은 1학년때 부터 느꼈기 때문에 건국대에서 주최하는 'Learning & Sharing'활동에 참여하면서 스터디 그룹을 만들어 공부하는 중이야. 서로 부족한 부분들을 알려 주는게 많은 도움이 되는것 같아.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question6" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									6. 최근에 코로나 때문에 스터디 활동을 하기에는 힘들지 않아? 스터디 활동에 힘든 점은 없어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									코로나 때문에 만나기에는 어려움이 있지. 그래서 zoom을 이용해서 화상으로 스터디를 하는 중이야! 매주 토요일마다 꾸준히 활동하고 있어.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question7" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									7. 그럼 이 활동 이후에는 어떤 것을 통해서 부족함을 보안할 계획이야?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									이 활동이 1학기 종강 이후에 마무리가 되고, 이후에는 친구들과 같이 공모전에 참가해볼 생각이야. 많은 프로젝트에 참여하면서 직접 부딪혀 보는 것이 가장 좋은 방법이라고 생각해.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question8" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									8. 컴퓨터 공학과를 졸업하고 생각하고 있는 진로가 어디야?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p> 
+									아직 명확하게 결정은 못 내렸지만 금융 쪽과 관련된 일들을 알아보는 중이야. 아빠가 그쪽 분야의 업무를 하시거든. 내 롤 모델이 아빠라 나도 그런 직종으로 가고 싶다는 생각을 많이 해.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question9" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+							<p>
+								9. 아빠가 롤모델이 된 계기가 있어?
+							</p>
+						</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									어렸을 때 아빠 회사에 가본적이 있는데 그때 아빠 모습이 평소에 집에서 보는 아빠와는 다르게 굉장히 멋있었어. 집에서는 많이 편하고 잘 웃는 좋은 아버지였는데 밖에서의 철저하고 진지한 모습이 멋있었던 것 같아. 그래서 나중에 아빠같은 사람이 되고 싶다는 생각을 하기 시작했지. 그러다보니 자연스럽게 아빠가 롤모델이 되어간 것 같아.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question10" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									10. 아버지가 좋은 분인가봐. 가족 분위기가 좋은 편이야?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									응. 내 로고가 있어. 아빠처럼 살고 엄마 같은 부인을 얻자. 부모님이 항상 긍정적이셔서 나하고 형도 평소에 많이 밝은 편이야. 학창시절에는 너무 많이 웃어서 애들이 내 웃음소리를 따라 한 적도 많아. 많이 웃으니 가족 분위기도 자연스럽게 좋아지는 것 같아. 이런 가족이 나는 너무 좋은 것 같아.  
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question11" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									11. 그럼 가족끼리 트러블이 생길때는 없어? 
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									물론 있지! 하지만 그런 상황이 발생할 때마다 서로 대화를 통해서 원만히 풀어나가고 있어. 그 상황 화난다고 대화를 차단하면 결국 안 좋은 결과만 나오게 되더라고. 그래서 항상 이성적으로 차분하게 서로의 입장을 얘기하고 풀어나가는 방향으로 문제를 해결해!
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question12" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									12. 아까 삶의 로고에 대해서 언급을 했는데, 혹시 삶의 가치관 같은게 있어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									음 아직 가치관이라는 게 확실히 정립된 거 같지는 않아. 그래도 내가 힘들 때는 '오늘이 없는 사람한테 내일은 없다'라는 말을 되새기면서 마음을 다 잡곤 해.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question13" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									13. 아버지말고 다른 롤모델은 없어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									내 두 번째 롤 모델은 '엘런 튜링'이야. 컴퓨터에 관심이 생기고 처음 접한 사람이 엘런 튜링에 관한 이야기였거든. 애플사의 회사 로고가 그와 관련 있단 사실이 놀라웠고 그 이야기가 흥미로워서 엘런 튜링에 대해 알아보기 시작했어. 이를 통해 그가 컴퓨터 분야에서 이룬 위대한 업적들을 알게 되었고 그를 존경하게 됐지.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question14" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									14. 취미는 뭐야?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									취미는 베드민턴하고 노래 듣기야. 노래는 팝송류를 좋아해.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question15" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									15. 취미 활동으로 뭔가 얻은게 있어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									중학교 때 바로 옆 고등학교인 고등학교에서 배드민턴 대회를 열었어. 중학생과 선생님이 팀을 이루고 복식 룰로 진행하는 대회였어. 소규모 대회였지만 거기서 3등을 하고 상품을 받았지. 이때 '나도 뭔가를 할 수 있구나!'라는 생각을 할 수 있었고 자신감이 올랐던 것 같아. 그리고 노래는 중학교, 고등학교 때 장기 자랑에는 빠지지 않고 참여했었어. 이 덕분에 남들 앞에서 발표를 하거나 무언가를 할 때 떨지 않고 더 잘할 수 있게 된 것 같아.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question16" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									16. 팝송 말고 좋아하는 노래 장르는 없어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									국내 노래는 아이돌 노래를 제외하고는 거의 다 좋아해. 최근 국내 노래에서 '흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야'를 가장 좋아해. 팝송이든 국내 노래든 들으면 마음이 편해지는 음악들을 좋아해. 좋은 노래가 있으면 나한테도 말해줘!
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question17" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									17. 노래를 잘하는 것 같은데 노래 대회는 참가해봤어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									고등학교 때 음악 경영 대회로 매년 여는 행사가 있었어. 그때 2등을 해서 은상을 타고 학교 축제에서 공연까지 했지. 
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question18" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									18. 요즘은 어떻게 취미 활동을 해?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									요즘은 코로나 덕분에 베드민턴을 칠 수가 없어. 하지만 노래는 계속듣고 유튜브 mr로 연습도 꾸준히 하고있어. 학교에 나갈 수 있게 되면 워너라는 동아리도 들어서 취미 생활과 학업을 같이 병행할 계획이야.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question19" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									19. 코로나 때문에 답답하겠네. 요즘 힘든 점은 없어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									코로나 덕분에 집에만 있는게 너무 답답해. 또 과제도 전에 비해서 점점 많아지는 것 같아. 예전에 평범했던 일상이 얼마나 소중한지 다시 한번 느끼게 돼. 하지만 나보다 더 힘든 분들이 많으니까 이겨내야 한다고 생각해!
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="Question20" class="Question">
+						<div class="ask">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									20. 마지막으로 하고 싶은 말 있어?
+								</p>
+							</div>
+						</div>
+						<div class="answer">
+							<img src="user_img.jpeg" alt="user_img">
+							<div>
+								<p>
+									요즘 시국에 다들 힘들텐데 다들 화이팅하고 건강관리 잘하세요!
+								</p>
+							</div>
+						</div>
+				</div>
+			</article>
+			<div class="for-fake">
+				<div id=article3-fake class="article-fake"></div>
+			</div>
+			<article id="article3">
+				<input type="radio" name="article_3" id="open_article3">
+				<div class="article-header">
+					<label for="open_article3">
+						<h1>3. 나의 소중한 기억!</h1>
+					</label>
+				</div>
+				<div class="article-body">
+					<img src="book_img.jpeg">
+					<div id="simple-book-introduce">
+						<p>제목: 완득이</p>
+						<p>지은이: 김려령</p>
+						<div id="wrapper">
+							<p>
+								&nbsp; 누군가가 나에게 '가장 재미있게 읽었던 책은 뭐니?'라고 묻는다면 가장 먼저 '완득이'가 떠오른다. 완득이는 김려령 작가가 쓴 장편소설로 완득이가 똥주 선생님과 가족, 이웃들에게 마음을 열고 성장해가는 모습을 보여주는 소설이다.
+							</p>  
+								<br>
+							<p>
+								&nbsp; 이 책을 읽게 된 것은 형의 추천 때문이었다. 평소 책을 잘 읽지 않는 형이 책을 추천해줄 정도면 충분히 읽어 볼 가치가 있다고 생각했다. 때문에 이 책을 읽게 되었고 너무 재미있어서 영화로 상영된 '완득이'까지 보게 되었다.
+							</p>
+								<br>
+							<p>
+								&nbsp; 중학생때 읽은 이 책이 아직까지 기억에 남는 이유는 어쩌면 완득이의 모습에서 내 모습이 보였기 때문이라고 생각한다. 아무런 꿈도 없이, 아무런 목표없이 살고 있었던 내 모습이 방황하던 완득이의 모습과 비슷한 듯했다. 하지만 소설 끝에서 완득이는 달랐다. 방황하던 완득이는 킥복싱을 하며 인생의 목표를 가졌다. 또 다른 사람과의 소통을 거부하던 완득이가 마음의 문을 열며 성장해 나가는 것이 부러웠는지도 모르겠다.
+							</p>
+								<br>
+							<p>
+								&nbsp; 이 책의 지은이 김려령 작가는 청소년들의 성장 소설을 많이 쓰는 작가이다. 완득이를 제외한 다른 작품에는 '우아한 거짓말', '가시고백' 등이 있고 창비 청소년 문학상, 마해송문학상 등의 수상 경력이 있다.
+							</p>
+						</div>
+					</div>
+				</div>
+			</article>
+			<div class="for-fake">
+				<div id=article4-fake class="article-fake"></div>
+			</div>
+			<div class="for-fake"></div>
+			<article id="article4">
+				<input type="radio" name="article_4" id="open_article4">
+				<div class="article-header">
+					<label for="open_article4">
+						<h1>4. 소개합니다!</h1>
+					</label>
+				</div>
+				<div class="article-body">
+					 <p>
+						<img src="character.jpeg" alt="teacher_img" >
+						 &nbsp; ‘완득이’라는 책은 고등학생 완득이의 성장 과정을 담고 있는 책이다. 완득이는 삼촌, 아버지와 함께 살고, 옆집에는 담임인 똥주 선생이 살고 있다. 완득이는 교회에 가서 ‘똥주 좀 죽여주세요.’라고 기도할 만큼 똥주를 싫어했고, 장애를 가진 아버지를 부끄러워하며 인생의 목표도 없는 소위 날라리였다. 이런 그를 성장하게 하는 발판이 똥주였다. 똥주는 항상 완득이의 주변에 있었고, 괴롭히는 것 같아도 항상 그를 응원하고 도와주었다. 고등학생 때까지 보지도 못한 엄마를 만나게 해주고, 킥복싱이라는 목표 또한 응원해 주었다. 엄마를 만나게 해주었을 때 완득이가 똥주에게 한 말이 있다. ‘’감사합니다.” 똥주를 싫어하던 완득이가 이런 말을 했을 때 나는 완득이가 마음에 문을 점차 열고 있음을 느낄 수 있었다. 완득이는 어머니를 처음 봤을 때 ‘그분’이라고 불렀다. 하지만 어머니가 가져다주는 도시락에 애틋함을 느끼고 점차 마음의 문을 열게 된다. 이후 옆집 아저씨에게 “제…어머니이십니다.”라고 소개하면서 완득이가 어머니를 부르는 호칭이 바뀌었고 이를 통해 어머니를 받아들였음을 느꼈다. 이런 사건들을 통해 완득이는 주변 사람들에게 마음의 문을 열게 되었고 킥복싱을 배우면서 인생의 목표까지 찾게 된다. 이런 완득이의 성장 스토리에서 우리가 느낄 수 있는 것은 무엇일까? 나는 완득이가 똥주에게 하는 행동을 보면서 부모님을 대하던 나의 모습이 생각났다. 철없는 사춘기 시절, 나를 위한 부모님의 행동 하나하나가 안 좋게 느껴지던 그때 내가 부모님께 한 행동들이 완득이와 비슷하게 느껴졌다. 완득이의 어머니와 아버지가 대화를 하며 서로 다름을 인정하고 갈등을 해결하는 부분에서 나와 다른 사람을 헐뜯고 무시했던 나의 모습이 생각났다. “우리 서로 인정하고 살자.”라는 말과는 다르게 서로의 꿈과 직업을 무시하는 행동들이 떠올랐다. ‘나는 어떤 삶을 살고 있지? 인생의 목표는 뭐야? 나 자신이, 혹은 내 주변이 부끄러워 말도 못 하고 있지는 않나?’ 이런 질문을 자신에게 던져보자! 당신에게 성장하기 전의 완득이의 모습이 보이고 있는가? 나의 못난 점을 숨기고, 나를 항상 응원하고 도와주는 누군가를 싫어하며, 사람들과의 교류를 차단하고 있는 모습이 당신의 모습과 비슷하지는 않나? 만약 당신이 방금 말한 모든 것에서 ‘나는 해당하지 않는다!’라고 말한다면 다시 한번 생각해 보길 바란다. 혹여나 당신에게 이러한 완득이의 모습이 보였다면 당신에게 이 책을 권하고 싶다.<br>
+						 &nbsp; 그렇다면 이 책에서 의미 있는 부분은 완득이의 성장과정밖에 없을까? 완득이의 아버지는 장애를 가지고 완득이를 잘 키우기 위해 항상 노력하시는 분이다. 그가 카바레에서 춤을 출 때 남들은 그를 비웃었지만 그는 꿋꿋이 참고 견뎌냈다. 이런 아버지의 모습에서 나도 남들의 시선을 꿋꿋이 견뎌낼 수 있는 단단한 사람이 되고 싶었다. 똥주는 괴짜 선생님이고 거칠어 보이지만 이주노동자들을 돕는 등 따뜻한 마음을 가진 것을 알 수 있다. 이렇게 이 책은 완득이의 성장 과정뿐만 아니라 주변 인물들을 통해서도 배울 것이 많다. 따라서 완득이의 성장과 주변 사람들의 가치관들을 중점적으로 본다면 이 책을 읽는 효과가 배가 될 것이다. 또한 나의 문제점을 어떻게 고칠지 생각하면서 읽는 것도 이 책을 읽는 좋은 방법이라고 생각한다. 교훈적인 측면뿐만 아니라 대화내용에서 익살스러운 표현을 섞어 가면서 말하거나 대화나 상황에서 유머러스한 부분이 많기 때문에 딱딱한 책보다 재미있는 책을 선호하는 사람들이 읽어도 좋은 책이라고 생각한다. 이 서평을 쓰기 위해 이 책을 다시 한번 읽으면서 옛날에는 아무 의미없이 보였던 구절들이 눈에 들어왔다. 영화로 완득이를 만나본 사람이라면 다시 책으로 접해보는 것도 좋을 것 같다. 이 책을 읽고 당신이 지금보다 더 당당하고! 꿋꿋이! 인생의 목표를 찾고 훨씬 더 좋은 삶을 살았으면 좋겠다.
+						 <br><br>
+						 사진 출처: https://terms.naver.com/entry.nhn?docId=3596438&cid=58583&categoryId=59315
+					</p>
+				</div>
+			</article>
+		</section>
+	</div>
+	<footer>
+		<div id="last-comment">
+			<h2>If you read my Web Site, try your self!</h2>
+			<h2>If you try like this you can develop more than now!</h2>
+		</div>
+		<p>made by GwonPyo Nam</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="normal_game.css">
+	<script src="normal_game.js"></script>
+	<title>normal_game!</title>
+</head>
+<body>
+	<div id="top">
+		점수: <input type="text" value="0" id="score" size="10">
+		최고 점수: <input type="text" value="0" id="max_score" size="10">
+	</div>
+
+	<canvas id="game_screen" width="558" height="398"></canvas>
+
+	<div id="button_menu">
+		<input type="button" value="시작" id="start">
+		<input type="button" value="초기화" id="reset">
+		<input type="button" value="옵션" id="option">
+		<input type="button" value="메뉴로 돌아가기" id="back_to_menu" onclick="window.open('menu.html', '_self');">
+	</div>
+</body>
+</html>
